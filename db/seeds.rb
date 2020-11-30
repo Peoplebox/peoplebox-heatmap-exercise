@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Response.delete_all
-Employee.delete_all 
+Employee.delete_all
 
 drivers = ['Role Clarity', 'Career Growth', 'Company Policies', 'Manager Support']
-departments = ['Sales', 'Marketing', 'Engineering', 'Support', 'Operations']
+departments = %w[Sales Marketing Engineering Support Operations]
 location = ['Bangalore', 'Mumbai', 'San Francisco']
-gender = ['Male', 'Female']
+gender = %w[Male Female]
 
 departments.each do |department|
   (0..10).each do |employee|
@@ -23,11 +23,10 @@ departments.each do |department|
       gender: gender.sample,
       age: (22..50).to_a.sample
     )
-    
+
     puts "Created #{e.name}"
     drivers.each do |d|
       Response.create(driver_name: d, score: (1..5).to_a.sample, employee: e)
     end
-    
   end
 end
