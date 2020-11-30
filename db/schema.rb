@@ -11,25 +11,23 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20190311093108) do
-
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "department"
-    t.string "location"
-    t.string "gender"
-    t.integer "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'employees', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.string 'department'
+    t.string 'location'
+    t.string 'gender'
+    t.integer 'age'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "responses", force: :cascade do |t|
-    t.string "driver_name"
-    t.string "score"
-    t.integer "employee_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_responses_on_employee_id"
+  create_table 'responses', force: :cascade do |t|
+    t.string 'driver_name'
+    t.string 'score'
+    t.integer 'employee_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['employee_id'], name: 'index_responses_on_employee_id'
   end
-
 end
